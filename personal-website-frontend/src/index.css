@@ -1,0 +1,97 @@
+:root {
+  /* 日系但更偏中性 / 冷色调配色 */
+  --color-bg: #f4f5f7;
+  --color-bg-soft: #f7f8fa;
+  --color-surface: #ffffff;
+  --color-border-subtle: rgba(15, 23, 42, 0.06);
+  --color-text-main: #1f2933;
+  --color-text-muted: #6c7a89;
+  --color-accent: #2563eb; /* 深蓝 */
+  --color-accent-soft: #dbeafe; /* 浅蓝高亮 */
+  --color-accent-secondary: #38bdf8; /* 青蓝 */
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.08);
+
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Hiragino Sans',
+    'Noto Sans SC', 'PingFang SC', 'Segoe UI', sans-serif;
+
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #e2ecff 0, transparent 45%),
+    radial-gradient(circle at bottom right, #dbeafe 0, transparent 50%),
+    var(--color-bg);
+  color: var(--color-text-main);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+#root {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 20px 64px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+section {
+  scroll-margin-top: 88px; /* 顶部导航高度补偿 */
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeInUp 700ms ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding: 24px 16px 40px;
+  }
+
+  main {
+    gap: 56px;
+  }
+}
